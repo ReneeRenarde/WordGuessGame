@@ -270,6 +270,8 @@ function checkIfGameLost() {
     if (mistakes === maxWrong) {
         document.getElementById('wordSpotlight').innerHTML = 'The answer was ' + answer;
         document.getElementById('keyboard').innerHTML = 'You Lost!';
+      dictionary();
+       
     }
 }
 
@@ -282,6 +284,12 @@ function updateMistakes() {
     document.getElementById('mistakes').innerHTML = mistakes;
 
 }
+
+function dictionary() {
+    var str = "What does that word even mean??";
+    var result = str.link("https://www.dictionary.com/browse/" + answer + "?s=t");
+    document.getElementById("definition").innerHTML = result;
+  }
 
 function reset() {
     mistakes = 0;
